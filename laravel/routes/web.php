@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TrucksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('trucks.index');
-});
+Route::get('/', [TrucksController::class, 'index'])->name('trucks.index');
+Route::get('/trucks/create', [TrucksController::class, 'create'])->name('trucks.create');
+Route::get('/trucks/edit', [TrucksController::class, 'edit'])->name('trucks.edit');
