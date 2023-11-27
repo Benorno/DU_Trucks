@@ -11,7 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('trucks', function (Blueprint $table) {
+            $table->id();
+            $table->string('unit_no')->unique();
+            $table->integer('year');
+            $table->text('note');
+            $table->timestamps();
+            $table->softDeletes();
+        });
     }
 
     /**
@@ -19,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('trucks');
     }
 };

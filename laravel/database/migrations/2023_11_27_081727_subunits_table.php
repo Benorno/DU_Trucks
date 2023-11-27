@@ -11,7 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('subunits', function (Blueprint $table) {
+            $table->id();
+            $table->string('main_truck');
+            $table->string('subunit')->unique();
+            $table->date('start_date');
+            $table->date('end_date');
+        });
     }
 
     /**
@@ -19,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('subunits');
     }
 };
