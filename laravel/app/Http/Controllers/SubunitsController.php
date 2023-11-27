@@ -66,6 +66,7 @@ class SubunitsController extends Controller
 
     public function store(Request $request)
     {
+        // validate the request
         $request->validate([
             'main_truck' => 'required|exists:trucks,id|different:subunit',
             'subunit' => 'required|exists:trucks,id',
@@ -73,18 +74,21 @@ class SubunitsController extends Controller
             'end_date' => 'required|date|after:start_date',
         ]);
 
+        // check if the subunit dates overlap with another subunit for the same main truck
         $overlap = Subunits::where('main_truck', $request->main_truck)
             ->where(function ($query) use ($request) {
                 $query->whereBetween('start_date', [$request->start_date, $request->end_date])
                     ->orWhereBetween('end_date', [$request->start_date, $request->end_date]);
             })->exists();
 
+        // check if the main truck is a subunit of another truck during the specified dates
         $isSubunit = Subunits::where('subunit', $request->main_truck)
             ->where(function ($query) use ($request) {
                 $query->whereBetween('start_date', [$request->start_date, $request->end_date])
                     ->orWhereBetween('end_date', [$request->start_date, $request->end_date]);
             })->exists();
 
+        // return back with an error message if the dates overlap
         if ($overlap || $isSubunit) {
             return redirect()->back()->withErrors('The main truck is a subunit of another truck during the specified dates or the subunit dates overlap with an existing subunit for the main truck.');
         }
@@ -97,6 +101,7 @@ class SubunitsController extends Controller
 
     public function update(Request $request, $id)
     {
+        // validate the request
         $request->validate([
             'main_truck' => 'required|exists:trucks,id|different:subunit',
             'subunit' => 'required|exists:trucks,id',
@@ -105,6 +110,7 @@ class SubunitsController extends Controller
             'end_date' => 'required|date|after:start_date',
         ]);
 
+        // check if the subunit dates overlap with another subunit for the same main truck
         $overlap = Subunits::where('main_truck', $request->main_truck)
             ->where('id', '!=', $id)
             ->where(function ($query) use ($request) {
@@ -112,6 +118,7 @@ class SubunitsController extends Controller
                     ->orWhereBetween('end_date', [$request->start_date, $request->end_date]);
             })->exists();
 
+        // check if the main truck is a subunit of another truck during the specified dates
         $isSubunit = Subunits::where('subunit', $request->main_truck)
             ->where('id', '!=', $id)
             ->where(function ($query) use ($request) {
@@ -119,6 +126,7 @@ class SubunitsController extends Controller
                     ->orWhereBetween('end_date', [$request->start_date, $request->end_date]);
             })->exists();
 
+        // return back with an error message if the dates overlap
         if ($overlap || $isSubunit) {
             return redirect()->back()->withErrors('The main truck is a subunit of another truck during the specified dates or the subunit dates overlap with an existing subunit for the main truck.');
         }
