@@ -49,7 +49,7 @@
                                     <label for="year" class="form-label fw-semibold">Year <span
                                             class="text-danger">*</span></label>
                                     <input type="text" name="year" class="form-control border-dark border-2"
-                                        id="year" placeholder="Year" required>
+                                        id="year" placeholder="Year from 1900 till {{ $tillDate }}" required>
                                 </div>
                             </div>
                         </div>
