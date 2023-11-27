@@ -6,9 +6,8 @@
             </div>
             <div class="col mt-2 d-none d-md-block">
                 <a href="{{ route('trucks.index') }}" class="btn btn-outline-light rounded-4 border-2 fw-semibold">Trucks <i class="bi bi-truck"></i></a>
-                <a href="" class="btn btn-outline-light rounded-4 border-2 fw-semibold mx-3">Subunits <i class="bi bi-diagram-3"></i></a>
-                <a href="" class="btn btn-outline-light rounded-4 border-2 fw-semibold">Database <i class="bi bi-database"></i></a>
-                <a href="" class="btn btn-outline-light rounded-4 border-2 fw-semibold mx-3">GitHub <i class="bi bi-github"></i></a>
+                <a href="{{ route('subunits.index') }}" class="btn btn-outline-light rounded-4 border-2 fw-semibold mx-3">Subunits <i class="bi bi-diagram-3"></i></a>
+                <a href="https://github.com/Benorno/DU_Trucks" target="_blank" class="btn btn-outline-light rounded-4 border-2 fw-semibold">GitHub <i class="bi bi-github"></i></a>
             </div>
             <div class="col d-block d-md-none">
                 <div class="dropdown mt-4 float-end">
@@ -18,9 +17,8 @@
                     </button>
                     <ul class="dropdown-menu">
                         <li class="py-2"><a class="dropdown-item" href="{{ route('trucks.index') }}">Trucks <i class="bi bi-truck"></i></a></li>
-                        <li class="py-2"><a class="dropdown-item" href="#">Subunits <i class="bi bi-diagram-3"></i></a></li>
-                        <li class="py-2"><a class="dropdown-item" href="#">Database <i class="bi bi-database"></i></a></li>
-                        <li class="py-2"><a class="dropdown-item" href="#">GitHub <i class="bi bi-github"></i></a></li>
+                        <li class="py-2"><a class="dropdown-item" href="{{ route('subunits.index') }}">Subunits <i class="bi bi-diagram-3"></i></a></li>
+                        <li class="py-2"><a class="dropdown-item" href="https://github.com/Benorno/DU_Trucks" target="_blank">GitHub <i class="bi bi-github"></i></a></li>
                     </ul>
                 </div>
             </div>

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('unit_no')->unique();
             $table->integer('year');
-            $table->text('note');
+            $table->text('note')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

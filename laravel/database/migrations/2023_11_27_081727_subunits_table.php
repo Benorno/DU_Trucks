@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('subunits', function (Blueprint $table) {
             $table->id();
             $table->string('main_truck');
-            $table->string('subunit')->unique();
+            $table->string('subunit');
+            $table->enum('status', ['active', 'inactive', 'expired'])->default('active');
             $table->date('start_date');
             $table->date('end_date');
+            $table->timestamps();
         });
     }
 
