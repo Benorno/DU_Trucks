@@ -1,3 +1,8 @@
+Simple admin panel for logistics managers. Made by following - [instructions]([https://laravel.com/docs](https://docs.google.com/document/d/1NOmPHWlTrr0x1SzHNSmtP80i6YMtkDrI6kSo7CCbazM/edit#heading=h.n81sdczfc7d2))
+Tool deployed in personal host - https://trucks.imbenas.com/
+
+<hr>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
