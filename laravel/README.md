@@ -1,4 +1,5 @@
-Simple admin panel for logistics managers. Made by following - [instructions]([https://docs.google.com/document/d/1NOmPHWlTrr0x1SzHNSmtP80i6YMtkDrI6kSo7CCbazM/edit#heading=h.n81sdczfc7d2])
+Simple admin panel for logistics managers. Made by following - [instructions](https://docs.google.com/document/d/1NOmPHWlTrr0x1SzHNSmtP80i6YMtkDrI6kSo7CCbazM/edit#heading=h.n81sdczfc7d2)
+<br>
 Tool deployed in personal host - https://trucks.imbenas.com/
 
 <hr>
