@@ -14,6 +14,7 @@ class Trucks extends Model
     protected $fillable = [
         'unit_no',
         'year',
-        'note'
+        'note',
     ];
+
 }
